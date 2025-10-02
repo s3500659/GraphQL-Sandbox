@@ -7,7 +7,11 @@
         _repo = repo;
     }
 
-    public List<Book> GetBooks() => _repo.GetBooks();
+    public List<Book> GetBooks()
+    {
+        return _repo.GetBooks();
+    }
+
     public Book GetBook(int id)
     {
         return _repo.GetBook(id);

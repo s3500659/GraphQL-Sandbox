@@ -399,3 +399,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+GraphQLDemo/BookLibrary.db
+GraphQLDemo/BookLibrary.db-shm
+GraphQLDemo/BookLibrary.db-wal
