@@ -45,13 +45,9 @@ public class BookLibrary : IBookLibrary
     }
 }
 
-public interface IQuery
-{
-    List<Book> GetBooks();
-    Book GetBook(int id);
-}
 
-public class Query : IQuery
+
+public class Query
 {
     private readonly IBookLibrary _bookLibrary;
 
@@ -66,6 +62,7 @@ public class Query : IQuery
         return _bookLibrary.Books.First(x => x.Id == id);
     }
 }
+
 
 public class Mutation
 {
