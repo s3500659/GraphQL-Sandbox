@@ -7,13 +7,13 @@
         _repo = repo;
     }
 
-    public List<Book> GetBooks()
+    public async Task<List<Book>> GetBooks()
     {
-        return _repo.GetBooks();
+        return await _repo.GetBooks();
     }
 
-    public Book GetBook(int id)
+    public async Task<Book?> GetBook(int id)
     {
-        return _repo.GetBook(id);
+        return await _repo.GetBook(id);
     }
 }

@@ -1,4 +1,6 @@
-﻿public class BookRepository : IBookRepository
+﻿using Microsoft.EntityFrameworkCore;
+
+public class BookRepository : IBookRepository
 {
     private readonly ApplicationDbContext _context;
 
@@ -8,21 +10,21 @@
     }
 
 
-    public Book AddBook(string title, string author)
+    public async Task<Book> AddBook(string title, string author)
     {
         var newBook = new Book(0, title, author);
-        _context.Books.Add(newBook);
-        _context.SaveChanges();
+        await _context.Books.AddAsync(newBook);
+        await _context.SaveChangesAsync();
         return newBook;
     }
 
-    public Book GetBook(int id)
+    public async Task<Book?> GetBook(int id)
     {
-        return _context.Books.First(x => x.Id == id);
+        return await _context.Books.FirstOrDefaultAsync(x => x.Id == id);
     }
 
-    public List<Book> GetBooks()
+    public async Task<List<Book>> GetBooks()
     {
-        return _context.Books.ToList();
+        return await _context.Books.ToListAsync();
     }
 }

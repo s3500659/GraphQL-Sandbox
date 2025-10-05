@@ -6,8 +6,9 @@
     {
         _bookLibrary = bookLibrary;
     }
-    public Book AddBook(string title, string author)
+
+    public async Task<Book> AddBook(string title, string author)
     {
-        return _bookLibrary.AddBook(title, author);
+        return await _bookLibrary.AddBook(title, author);
     }
 }
