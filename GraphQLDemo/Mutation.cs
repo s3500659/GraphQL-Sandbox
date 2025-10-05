@@ -1,4 +1,6 @@
-﻿public class Mutation
+﻿using GraphQLDemo;
+
+public class Mutation
 {
     private readonly IBookRepository _bookLibrary;
 

@@ -1,4 +1,6 @@
-﻿public class Query
+﻿using GraphQLDemo;
+
+public class Query
 {
     private readonly IBookRepository _repo;
 
@@ -12,7 +14,7 @@
         return await _repo.GetBooks();
     }
 
-    public async Task<Book?> GetBook(int id)
+    public async Task<Book> GetBook(int id)
     {
         return await _repo.GetBook(id);
     }
